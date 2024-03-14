@@ -4,6 +4,26 @@
 [https://playwright.dev/docs/intro#installing-playwright]
 
 ## Documentation
+**When creating new test file**  
+Add `import { test, expect } from "@playwright/test";` at top of the file
+  
+Create describe or test block to write test cases and assertions
+```
+Syntax -
+test.describe('title', () => {
+    test('title', () => {})
+})
+```
+  
+```
+Example -
+test.describe("google", () => {
+  test("open google", async ({page}) => {
+    await page.goto("https://google.com");
+    await expect(page).toHaveTitle("Google");
+  });
+});
+```
 
 ## Commands
 **Run end to end test** -  `npx playwright test`  
